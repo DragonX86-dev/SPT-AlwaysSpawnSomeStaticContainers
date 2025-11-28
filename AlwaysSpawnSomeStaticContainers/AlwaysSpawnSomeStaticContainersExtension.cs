@@ -22,7 +22,6 @@ public class AlwaysSpawnContainersExtension(ModHelper modHelper, DatabaseServer 
             .ForEach(location =>
             {
                 if (location.StaticContainers?.Value == null) return;
-                if (location.Statics?.ContainersGroups == null) return;
 
                 location.StaticContainers.Value.StaticContainers.ToList().ForEach(staticContainer =>
                 {
@@ -32,11 +31,6 @@ public class AlwaysSpawnContainersExtension(ModHelper modHelper, DatabaseServer 
                     {
                         staticContainer.Probability = 1;
                     }
-                });
-
-                location.Statics.ContainersGroups.ToList().ForEach(containerGroup =>
-                {
-                    containerGroup.Value.MaxContainers = 99;
                 });
             });
 
