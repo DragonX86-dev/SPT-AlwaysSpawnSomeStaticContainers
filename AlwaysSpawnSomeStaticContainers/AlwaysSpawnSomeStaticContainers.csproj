@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Configuration>Release</Configuration>
-        <AssemblyName>AlwaysSpawnContainers.NG</AssemblyName>
+        <AssemblyName>AlwaysSpawnSomeStaticContainers</AssemblyName>
         <Version>1.0.0</Version>
     </PropertyGroup>
 
