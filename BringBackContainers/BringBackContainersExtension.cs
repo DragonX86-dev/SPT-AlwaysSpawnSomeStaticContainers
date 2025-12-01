@@ -3,13 +3,12 @@ using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.DI;
 using SPTarkov.Server.Core.Helpers;
 using SPTarkov.Server.Core.Models.Common;
-using SPTarkov.Server.Core.Models.Eft.Common;
 using SPTarkov.Server.Core.Servers;
 
-namespace AlwaysSpawnSomeStaticContainers;
+namespace BringBackContainers;
 
 [Injectable(TypePriority = OnLoadOrder.PostDBModLoader + 1)]
-public class AlwaysSpawnContainersExtension(ModHelper modHelper, DatabaseServer databaseServer) : IOnLoad
+public class BringBackContainersExtension(ModHelper modHelper, DatabaseServer databaseServer) : IOnLoad
 {
     public Task OnLoad()
     {
@@ -43,7 +42,7 @@ public class AlwaysSpawnContainersExtension(ModHelper modHelper, DatabaseServer 
                 staticContainer.Probability = 1;
             }
 
-            foreach (var containersInGroup in containersInGroupCount.ToList())
+            foreach (var containersInGroup in containersInGroupCount)
             {
                 if (!location.Statics.ContainersGroups.TryGetValue(containersInGroup.Key, out var containersGroup))
                     continue;
